@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tu juego</title>
+  </head>
+  <body>
+    <h1>Tu juego</h1>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" /><br />
+
+    <label for="raza">Raza:</label>
+    <select id="raza"></select
+    ><br />
+
+    <button id="nuevojugador">Nuevo Jugador</button>
+    <button id="addCompanionBtn">Agregar Compañero</button><br />
+
+    <label for="sumarExperiencia">Experiencia:</label>
+    <input type="number" id="sumarExperiencia" /><br />
+
+    <label for="restarSalud">Restar salud:</label>
+    <input type="number" id="restarSalud" />
+
+    <button id="tomarPocion">Tomar poción de vida</button>
+
+    <button id="resucitar">Resucitar</button><br />
+
+    <label for="arma">Arma:</label>
+    <select id="arma"></select
+    ><br />
+
+    <label for="armadura">Armadura:</label>
+    <select id="armadura"></select
+    ><br />
+
+    <h1>Equipo del jugador</h1>
+    <table id="playerTable">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Raza</th>
+          <th>Nivel</th>
+          <th>Experiencia</th>
+          <th>Experiencia Siguiente Nivel</th>
+          <th>Vida Restante</th>
+          <th>Vida Máxima</th>
+          <th>Ataque</th>
+          <th>Defensa</th>
+          <th>Velocidad</th>
+          <th>Atributo Elemental</th>
+          <th>Suerte</th>
+          <th>Arma Equipada</th>
+          <th>Armadura Equipada</th>
+        </tr>
+      </thead>
+      <tbody id="playerTableBody"></tbody>
+    </table>
+
+    <button onclick="damageCompanion(0, 20, false)">
+      Aplicar daño a compañero 1
+    </button>
+    <button onclick="damageCompanion(1, 20, false)">
+      Aplicar daño a compañero 2
+    </button>
+    <button onclick="damageCompanion(2, 20, false)">
+      Aplicar daño a compañero 3
+    </button>
+    <button onclick="damageCompanion(null, 20, true)">
+      Aplicar daño a todos los compañeros
+    </button>
+
+    <h1>Equipo de Enemigos</h1>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Nivel</th>
+        <th>Salud</th>
+        <th>Ataque</th>
+        <th>Defensa</th>
+        <th>Velocidad</th>
+        <th>Atributo Elemental</th>
+        <th>Suerte</th>
+      </tr>
+      <tbody id="equipo-enemigos"></tbody>
+    </table>
+
+    <button id="GenEnemy">Generar enemigos</button><br />
+    <input id="enemigoIndividual" type="number" />
+    <input id="danioIndividual" type="number" />
+    <button id="recibirDanioIndividual">daño individual</button><br />
+    <input id="danioGrupal" type="number" /> 
+    <button id="recibirDanioGrupal">daño grupal</button>
+
+    <script src="./utils/armas.js"></script>
+    <script src="./utils/armaduras.js"></script>
+    <script src="./utils/razas.js"></script>
+    <script src="./utils/enemigos.js"></script>
+    <script src="./class/player.js"></script>
+    <script src="./class/companion.js"></script>
+    <script src="./class/enemy.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
